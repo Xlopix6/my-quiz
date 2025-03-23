@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz de Casal - Relação Sexual</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #fce4ec; padding: 20px; }
+    h1, h2 { color: #d81b60; }
+    button { background-color: #d81b60; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+    button:hover { background-color: #ad1457; }
+    div { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Quiz Íntimo </h1>
+  <p>Responda com sinceridade para descobrir o quanto vocês se conhecem na intimidade.</p>
+
+  <form id="quizForm">
+    <div>
+      <p>1. Qual a posição sexual favorita do seu parceiro(a)?</p>
+      <label><input type="radio" name="q1" value="Missionário" /> Missionário</label>
+      <label><input type="radio" name="q1" value="De quatro" /> De quatro</label>
+      <label><input type="radio" name="q1" value="69" /> 69</label>
+      <label><input type="radio" name="q1" value="Spooning" /> Spooning</label>
+    </div>
+
+    <div>
+      <p>2. Qual a frequência ideal de relações sexuais para seu parceiro(a)?</p>
+      <label><input type="radio" name="q2" value="Diariamente" /> Diariamente</label>
+      <label><input type="radio" name="q2" value="Algumas vezes por semana" /> Algumas vezes por semana</label>
+      <label><input type="radio" name="q2" value="Uma vez por semana" /> Uma vez por semana</label>
+      <label><input type="radio" name="q2" value="Raramente" /> Raramente</label>
+    </div>
+
+    <div>
+      <p>3. Qual o maior desejo sexual do seu parceiro(a)?</p>
+      <label><input type="radio" name="q3" value="Sexo ao ar livre" /> Sexo ao ar livre</label>
+      <label><input type="radio" name="q3" value="Brincadeiras com venda" /> Brincadeiras com venda</label>
+      <label><input type="radio" name="q3" value="Filmes eróticos" /> Filmes eróticos</label>
+      <label><input type="radio" name="q3" value="Massagens sensuais" /> Massagens sensuais</label>
+    </div>
+
+    <div>
+      <p>4. Qual a zona erógena preferida do seu parceiro(a)?</p>
+      <label><input type="radio" name="q4" value="Pescoço" /> Pescoço</label>
+      <label><input type="radio" name="q4" value="Orelhas" /> Orelhas</label>
+      <label><input type="radio" name="q4" value="Costas" /> Costas</label>
+      <label><input type="radio" name="q4" value="Pés" /> Pés</label>
+    </div>
+
+    <div>
+      <p>5. Qual brinquedo sexual seu parceiro(a) tem mais curiosidade em experimentar?</p>
+      <label><input type="radio" name="q5" value="Vibrador" /> Vibrador</label>
+      <label><input type="radio" name="q5" value="Algemas" /> Algemas</label>
+      <label><input type="radio" name="q5" value="Plug anal" /> Plug anal</label>
+      <label><input type="radio" name="q5" value="Nenhum" /> Nenhum</label>
+    </div>
+
+    <div>
+      <p>6. Qual a fantasia sexual que o seu parceiro(a) gostaria de realizar?</p>
+      <label><input type="radio" name="q6" value="Fantasias com roupas" /> Fantasias com roupas</label>
+      <label><input type="radio" name="q6" value="Sexo sádico" /> Sexo sádico</label>
+      <label><input type="radio" name="q6" value="Roleplay" /> Roleplay</label>
+      <label><input type="radio" name="q6" value="Menage" /> Menage</label>
+    </div>
+
+    <div>
+      <p>7. Qual o local mais inusitado onde seu parceiro(a) gostaria de fazer sexo?</p>
+      <label><input type="radio" name="q7" value="Praia" /> Praia</label>
+      <label><input type="radio" name="q7" value="Carro" /> Carro</label>
+      <label><input type="radio" name="q7" value="Elevador" /> Elevador</label>
+      <label><input type="radio" name="q7" value="Banheiro público" /> Banheiro público</label>
+    </div>
+
+    <div>
+      <p>8. Qual a cor de lingerie ou cueca favorita do seu parceiro(a)?</p>
+      <label><input type="radio" name="q8" value="Preto" /> Preto</label>
+      <label><input type="radio" name="q8" value="Vermelho" /> Vermelho</label>
+      <label><input type="radio" name="q8" value="Branco" /> Branco</label>
+      <label><input type="radio" name="q8" value="Azul" /> Azul</label>
+    </div>
+
+    <div>
+      <p>9. Qual é a música favorita do seu parceiro(a) para momentos íntimos?</p>
+      <label><input type="radio" name="q9" value="R&B" /> R&B</label>
+      <label><input type="radio" name="q9" value="Pop" /> Pop</label>
+      <label><input type="radio" name="q9" value="Jazz" /> Jazz</label>
+      <label><input type="radio" name="q9" value="Rock" /> Rock</label>
+    </div>
+
+    <div>
+      <p>10. Qual horário seu parceiro(a) prefere para ter relações?</p>
+      <label><input type="radio" name="q10" value="Manhã" /> Manhã</label>
+      <label><input type="radio" name="q10" value="Tarde" /> Tarde</label>
+      <label><input type="radio" name="q10" value="Noite" /> Noite</label>
+      <label><input type="radio" name="q10" value="Madrugada" /> Madrugada</label>
+    </div>
+
+   <button type="button" onclick="calcularResultado()">Enviar</button>
+  </form>
+
+  <h2 id="resultado"></h2>
+
+  <script>
+    function calcularResultado() {
+      const respostasCorretas = {
+        q1: 'Missionário',
+        q2: 'Diariamente',
+        q3: 'Filmes eróticos',
+        q4: 'Pescoço',
+        q5: 'Algemas',
+        q6: 'Sexo sádico',
+        q7: 'Carro',
+        q8: 'Preto',
+        q9: 'R&B',
+        q10: 'Noite'
+      };
+      let acertos = 0;
+      for (let i = 1; i <= 10; i++) {
+        const respostaSelecionada = document.querySelector(`input[name="q${i}"]:checked`);
+        if (respostaSelecionada && respostaSelecionada.value === respostasCorretas[`q${i}`]) {
+          acertos++;
+        }
+      }
+      const porcentagem = (acertos / 10) * 100;
+      document.getElementById('resultado').innerText = `Você acertou ${acertos} de 10 perguntas. Sua pontuação: ${porcentagem.toFixed(1)}%`;
+    }
+  </script>
+</body>
+</html>
